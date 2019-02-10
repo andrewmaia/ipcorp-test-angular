@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Logs Sistema IpCorp
+  </h1>
+</div>
+<h2>Desenvolvido por Andrew Maia</h2>
+<button (click)="import()" [disabled]="importing">Importar últimos 10 registros</button>        
+<div *ngIf="logs$ | async as logs">
+  <table border="1">
+      <thead >
+          <tr>
+            <th>LogSistemaID</th>
+            <th>Data</th> 
+            <th>Origem</th> 
+            <th>Contexto</th> 
+            <th>Severidade</th> 
+            <th>ArquivoFonte</th> 
+            <th>MetodoFonte</th>
+            <th>Maquina</th> 
+            <th>LinhaFonte</th> 
+            <th>Propriedades</th> 
+            <th>Excecao</th> 
+            <th>OrigemId</th>
+            <th>LogContextoId</th> 
+            <th>UsuarioId</th> 
+            <th>NomeUsuario</th> 
+            <th>Data</th>                                                                                      
+          </tr>  
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of logs">
+              <td>{{log.logSistemaId}}</td>
+              <td>{{log.data}}</td> 
+              <td>{{log.origem}}</td> 
+              <td>{{log.contexto}}</td> 
+              <td>{{log.severidade}}</td> 
+              <td>{{log.arquivoFonte}}</td> 
+              <td>{{log.metodoFonte}}</td>
+              <td>{{log.maquina}}</td> 
+              <td>{{log.linhaFonte}}</td> 
+              <td>{{log.propriedades}}</td> 
+              <td>{{log.excecao}}</td> 
+              <td>{{log.origemId}}</td>
+              <td>{{log.logContextoId}}</td> 
+              <td>{{log.usuarioId}}</td> 
+              <td>{{log.nomeUsuario}}</td> 
+              <td>{{log.data}}</td>    
+          </tr>
+        </tbody>           
+  </table>
+</div>
+  
